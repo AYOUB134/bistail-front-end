@@ -8,7 +8,7 @@ import {
   getPromoCode,
   deletePromoCode,
 } from "../../store/PromoCode/promoCode.action";
-import ToggleSwitch from "../../extra/ToggleSwitch";
+// import ToggleSwitch from "../../extra/ToggleSwitch";
 import dayjs from "dayjs";
 import PromoDialog from "./PromoDialog";
 import Pagination from "../../extra/Pagination";
@@ -17,7 +17,7 @@ import {  warning } from "../../util/Alert";
 const PromoCode = (props) => {
   const [page, setPage] = useState(0);
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const navigate = useNavigate();

@@ -42,7 +42,6 @@ function getStyles(name, personName, theme) {
 }
 
 const AddProduct = (props) => {
-  
   const { fakeSeller } = useSelector((state) => state.fakeSeller);
   const { category } = useSelector((state) => state.category);
   const { categoryWiseSubCategory } = useSelector((state) => state.subCategory);
@@ -115,8 +114,6 @@ const AddProduct = (props) => {
     dispatch(getAttribute());
   }, [categoryType, dispatch]);
 
-
-
   const handlePersonNameChange = (index, selectedValues, attributeName) => {
     const updatedPersonNames = [...personNames];
     updatedPersonNames[index] = {
@@ -148,7 +145,7 @@ const AddProduct = (props) => {
       setPrice(state?.price);
       setImagePath(state?.mainImage);
       setSellerType(state?.seller?._id);
-     
+
       setCategoryType(state?.category?._id);
       setSubCategoryType(state?.subCategory?._id);
       setDescription(state?.description);
@@ -267,7 +264,6 @@ const AddProduct = (props) => {
 
       return setError({ ...error });
     } else {
-      
       const formData = new FormData();
       formData.append("productName", productName);
       formData.append("price", price);
@@ -301,12 +297,9 @@ const AddProduct = (props) => {
           <div className="sellerHeader primeHeader">
             <div className="row">
               <div className="col-12">
-                <div
-                  className="d-flex justify-content-end"
-                >
+                <div className="d-flex justify-content-end">
                   <Button
                     newClass={`themeFont boxCenter userBtn fs-5`}
-                    
                     btnIcon={`fa-solid fa-angles-left text-white fs-6`}
                     style={{
                       borderRadius: "5px",
@@ -361,7 +354,7 @@ const AddProduct = (props) => {
                           );
                         })}
                       </select>
-                
+
                       {error.sellerType && (
                         <div className="pl-1 text-left">
                           <p className="errorMessage">{error.sellerType}</p>
@@ -778,7 +771,9 @@ const AddProduct = (props) => {
                     <div className="col-xl-10 col-md-8 col-12 mt-5">
                       {images?.map((file, index) => {
                         return file?.type?.split("image")[0] === "" ? (
-                          <>  <img
+                          <>
+                            {" "}
+                            <img
                               height="100px"
                               width="100px"
                               alt="app"
@@ -814,7 +809,6 @@ const AddProduct = (props) => {
                                 onClick={() => removeImage(file)}
                               ></i>
                             </div>
-                        
                           </>
                         ) : (
                           <>
