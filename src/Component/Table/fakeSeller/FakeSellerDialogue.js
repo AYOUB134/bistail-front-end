@@ -122,7 +122,6 @@ const FakeSellerDialog = (props) => {
   };
 
   const handleSubmit = () => {
-    console.log("coming");
     if (
       !video ||
       !firstName ||
@@ -152,7 +151,6 @@ const FakeSellerDialog = (props) => {
       !branchName ||
       password !== confirmPassword
     ) {
-      console.log("coming 0")
       let error = {};
       if (!firstName) error.firstName = "First Name Is Required ";
       if (!lastName) error.lastName = "Last Name Is Required ";
@@ -186,7 +184,6 @@ const FakeSellerDialog = (props) => {
       if (!branchName) error.branchName = "Branch Name Is Required ";
       return setError({ ...error });
     } else {
-      console.log("coming 1")
       const formData = new FormData();
       formData.append("firstName", firstName);
       formData.append("lastName", lastName);
@@ -211,10 +208,8 @@ const FakeSellerDialog = (props) => {
       formData.append("address", address);
 
       if (mongoId) {
-        console.log(formData, mongoId);
         dispatch(updateFakeSeller(formData, mongoId));
       } else {
-        console.log("coming 2")
         console.log(formData);
         dispatch(createFakeSeller(formData));
       }
